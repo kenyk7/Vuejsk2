@@ -1,0 +1,19 @@
+// ==== STYLES ==== //
+
+// Configuration variables and settings
+@import "_config";
+
+
+// Load milligramcore plugin csss minimal
+// @import "bower_components/MilligramCore/src/scss/milligram-core";
+
+
+// load plugins
+
+// end load plugins
+
+// Local styles
+@import "mixin/general";
+@import "base/general";
+@import "components/general";
+@import "pages/general";
