@@ -1,13 +1,38 @@
 <template>
-  <div class="jumbotron">
-    <h1>{{ msg }} {{ token }}</h1>
-    <p>
-      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
-    </p>
+  <div>
+    <div class="page-head">
+      <h1>{{ msg }} {{ token }}</h1>
+      <p>
+        <vs-btn size="md" variant="primary">Primary</vs-btn>
+      </p>
+    </div>
+    <hr>
+    <h3>Test Redirects</h3>
+    <ul>
+      <li><router-link :to="{name: 'account'}">Test account access</router-link></li>
+      <li><router-link :to="{name: 'admin'}">Test admin access</router-link></li>
+      <li><router-link :to="{name: 'admin-products'}">Test admin products access</router-link></li>
+      <li><router-link :to="{name: 'admin-product-info', params: {product_id: 1}}">Test admin product 1 info access (should work)</router-link></li>
+      <li><router-link :to="{name: 'login'}">Test login page access</router-link></li>
+    </ul>
+
+    <hr>
+
+    <h3>Test Tokens</h3>
+
+    <div style="word-wrap:break-word;">{{ token === '' ? 'select token' : (token ? token : 'no token set') }}</div>
+
+    <ul>
+      <li><a v-on:click="setToken()" href="javascript:void(0);">Test default token</a></li>
+      <li><a v-on:click="setToken('other')" href="javascript:void(0);">Test other token</a></li>
+      <li><a v-on:click="setToken('default')" href="javascript:void(0);">Test admin token</a></li>
+    </ul>
   </div>
 </template>
 
 <script>
+import vuestrapBase from 'vuestrap-base-components'
+
 export default {
   name: 'home',
   data () {
@@ -21,6 +46,10 @@ export default {
     setToken (name) {
       this.token = this.$auth.token(name)
     }
+  },
+
+  components: {
+    'vs-btn': vuestrapBase.buttons
   }
 }
 </script>

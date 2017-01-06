@@ -31,6 +31,9 @@
               <li class="nav-item ">
                 <router-link :to="{name: 'login'}" class="nav-link">Login</router-link>
               </li>
+              <li class="nav-item ">
+                <router-link :to="{name: 'oauth'}" class="nav-link">OAuth 2</router-link>
+              </li>
               <li class="nav-item">
                 <router-link :to="{name: 'register'}" class="nav-link">Register</router-link>
               </li>
@@ -83,7 +86,7 @@
 
 @import "src/scss/style.scss";
 
-.navbar-brand{
+.navbar-brand {
   line-height: 1.25
 }
 

@@ -11,6 +11,12 @@ var auth = [
     meta: {auth: false}
   },
   {
+    path: '/oauth',
+    name: 'oauth',
+    component: require('./views/auth/OAuth2.vue'),
+    meta: {auth: false}
+  },
+  {
     path: '/register',
     name: 'register',
     component: require('./views/auth/Register.vue'),
@@ -81,6 +87,11 @@ var errors = [
     path: '/404',
     name: 'error-404',
     component: require('./views/errors/404.vue')
+  },
+  {
+    path: '/403',
+    name: 'error-403',
+    component: require('./views/errors/403.vue')
   },
   {
     path: '*',

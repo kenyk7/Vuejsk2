@@ -2,21 +2,19 @@
   <div >
     <h1>Users</h1>
 
-    <hr/>
+    <hr>
 
     <div v-if="!loading">
-      <transition>
-        <ul>
-          <li v-for="user in users">
-            {{ user.username }} {{ user.id }}
-            <span class="tag tag-default tag-pill float-xs-right">{{ user.role }}</span>
-          </li>
-        </ul>
-      </transition>
+      <ul>
+        <li v-for="user in users">
+          {{ user.username }} {{ user.id }}
+          <span class="tag tag-default tag-pill float-xs-right">{{ user.role }}</span>
+        </li>
+      </ul>
     </div>
 
-    <div v-else>
-      <loader></loader>
+    <div v-show="loading">
+      <loader :static="true"></loader>
     </div>
 
   </div>
