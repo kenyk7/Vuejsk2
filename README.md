@@ -1,4 +1,4 @@
-# interbank
+# Vuejsk2 Boilerplate Frontend
 
 > A Vue.js project
 
