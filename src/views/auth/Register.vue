@@ -3,7 +3,7 @@
     <div class="container">
       <div class="container-content">
         <div class="text-center">
-          <img src="static/logo.png" alt="Login" width="90">
+          <img src="static/img/logo.png" alt="Login" width="90">
         </div>
         <div class="login-form">
           <h3 class="text-center">

@@ -1,6 +1,6 @@
 <template>
   <div >
-    <h1>Users</h1>
+    <h1 class="js-title-users">Users</h1>
 
     <hr>
 
@@ -22,6 +22,7 @@
 
 <script>
 import Loader from './../components/Loader'
+import $ from 'jquery'
 
 export default {
   name: 'users',
@@ -40,6 +41,7 @@ export default {
 
   mounted () {
     this.getUsers()
+    $('.js-title-users').addClass('h2')
   },
 
   methods: {

@@ -2,9 +2,6 @@
   <div>
     <div class="page-head">
       <h1>{{ msg }} {{ token }}</h1>
-      <p>
-        <vs-btn size="md" variant="primary">Primary</vs-btn>
-      </p>
     </div>
     <hr>
     <h3>Test Redirects</h3>
@@ -31,8 +28,6 @@
 </template>
 
 <script>
-import vuestrapBase from 'vuestrap-base-components'
-
 export default {
   name: 'home',
   data () {
@@ -48,9 +43,7 @@ export default {
     }
   },
 
-  components: {
-    'vs-btn': vuestrapBase.buttons
-  }
+  components: { }
 }
 </script>
 

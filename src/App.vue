@@ -2,59 +2,66 @@
   <div class="body-app">
 
     <div v-if="$auth.ready() && loaded">
-
-      <nav class="navbar navbar-dark bg-inverse navbar-fixed-top">
-        <button class="navbar-toggler hidden-md-up" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"></button>
-
-        <div class="collapse navbar-toggleable-sm" id="navbarResponsive">
-          <div class="container-">
+      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
             <router-link :to="{name: 'home'}" class="navbar-brand">{ Name App }</router-link>
-            <!-- Default links -->
-            <ul class="nav navbar-nav">
-              
-              <li class="nav-item">
-                <router-link :to="{name: 'about'}" class="nav-link">About</router-link>
-              </li>
-              <li class="nav-item">
-                <router-link :to="{name: 'contact'}" class="nav-link">Contact</router-link>
-              </li>
-              <!-- Show auth Admin-->
-              <li class="nav-item" v-show="$auth.check('admin')">
-                <router-link :to="{name: 'admin'}" class="nav-link">Admin</router-link>
-              </li>
-              <li class="nav-item" v-show="$auth.check('admin')">
-                <router-link :to="{name: 'users'}" class="nav-link">Users</router-link>
-              </li>
-            </ul>
-            <!-- No auth links -->
-            <ul class="nav navbar-nav float-md-right" v-show="!$auth.check()">
-              <li class="nav-item ">
-                <router-link :to="{name: 'login'}" class="nav-link">Login</router-link>
-              </li>
-              <li class="nav-item ">
-                <router-link :to="{name: 'oauth'}" class="nav-link">OAuth 2</router-link>
-              </li>
-              <li class="nav-item">
-                <router-link :to="{name: 'register'}" class="nav-link">Register</router-link>
-              </li>
-            </ul>
-            <!-- Auth links -->
-            <ul class="nav navbar-nav float-md-right" v-show="$auth.check()">
-              <li class="nav-item dropdown ">
-                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Profile
-                </a>
-                <div class="dropdown-menu dropdown-menu-right">
-                  <router-link :to="{name: 'account'}" class="dropdown-item">Account</router-link>
-                  <a class="dropdown-item" href="#" v-on:click="logout()">Logout</a>
-                </div>
-              </li>
-            </ul>
           </div>
+      
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+              <li>
+                <router-link :to="{name: 'about'}">About</router-link>
+              </li>
+              <li>
+                <router-link :to="{name: 'contact'}">Contact</router-link>
+              </li>
+              <li v-show="$auth.check('admin')">
+                <router-link :to="{name: 'admin'}">Admin</router-link>
+              </li>
+              <li v-show="$auth.check('admin')">
+                <router-link :to="{name: 'users'}">Users</router-link>
+              </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right" v-if="!$auth.check()">
+              <li>
+                <router-link :to="{name: 'login'}">Login</router-link>
+              </li>
+              <li>
+                <router-link :to="{name: 'oauth'}">OAuth 2</router-link>
+              </li>
+              <li>
+                <router-link :to="{name: 'register'}">Register</router-link>
+              </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right" v-else>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ $auth.user().username }} <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <router-link :to="{name: 'account'}" class="dropdown-item">Account</router-link>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#" v-on:click="logout()">Logout</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
         </div>
       </nav>
 
-      <main style="margin-top: 70px">
+      <main style="margin-top: 90px">
         <div class="container">
           <router-view></router-view>
         </div>
@@ -82,13 +89,8 @@
 
 </template>
 
-<style lang="sass?outputStyle=expanded">
-
-@import "src/scss/style.scss";
-
-.navbar-brand {
-  line-height: 1.25
-}
+<style lang="scss">
+// @import "src/scss/style.scss";
 
 </style>
 

@@ -1,20 +1,30 @@
 // Mixin media all bootstrap based
 
+$mq-xxs: 480px;
+$mq-xs: 768px;
+$mq-sm: 992px;
+$mq-md: 1200px;
+
+$maxw-xxs: "(max-width: "#{$mq-xxs - 1}")";
 $maxw-xs: "(max-width: "#{$mq-xs - 1}")";
 $maxw-sm: "(max-width: "#{$mq-sm - 1}")";
 $maxw-md: "(max-width: "#{$mq-md - 1}")";
-$maxw-lg: "(max-width: "#{$mq-lg - 1}")";
 
+$minw-xxs: "(min-width: "#{$mq-xxs}")";
 $minw-xs: "(min-width: "#{$mq-xs}")";
 $minw-sm: "(min-width: "#{$mq-sm}")";
 $minw-md: "(min-width: "#{$mq-md}")";
-$minw-lg: "(min-width: "#{$mq-lg}")";
 
 // Down
 // -----------------------------------------
 @mixin mediaDown($breakpoint) {
 
-	@if $breakpoint == xs {
+	@if $breakpoint == xxs {
+		@media #{$maxw-xxs} {
+			@content;
+		}
+	}
+	@else if $breakpoint == xs {
 		@media #{$maxw-xs} {
 			@content;
 		}
@@ -29,11 +39,6 @@ $minw-lg: "(min-width: "#{$mq-lg}")";
 			@content;
 		}
 	}
-	@else if $breakpoint == lg {
-		@media #{$maxw-lg} {
-			@content;
-		}
-	}
 	@else {
 		@media (max-width: "#{$breakpoint}") {
 			@content;
@@ -45,7 +50,12 @@ $minw-lg: "(min-width: "#{$mq-lg}")";
 // -----------------------------------------
 @mixin mediaUp($breakpoint) {
 
-	@if $breakpoint == xs {
+	@if $breakpoint == xxs {
+		@media #{$minw-xxs} {
+			@content;
+		}
+	}
+	@else if $breakpoint == xs {
 		@media #{$minw-xs} {
 			@content;
 		}
@@ -57,11 +67,6 @@ $minw-lg: "(min-width: "#{$mq-lg}")";
 	}
 	@else if $breakpoint == md {
 		@media #{$minw-md} {
-			@content;
-		}
-	}
-	@else if $breakpoint == lg {
-		@media #{$minw-lg} {
 			@content;
 		}
 	}

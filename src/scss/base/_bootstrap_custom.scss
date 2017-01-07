@@ -1,0 +1,136 @@
+// Modal center
+// ------------------------------------------------
+.modal{
+	text-align: center;
+	padding: 0 !important;
+	&:before{
+		content: '';
+		display: inline-block;
+		height: 100%;
+		vertical-align: middle;
+		margin-right: -4px;
+	}
+	&-dialog{
+		display: inline-block;
+		text-align: left;
+		vertical-align: middle;
+		.modal-body{
+			min-height: 100px;
+		}
+	}
+	&-content{
+		border: 0;
+	}
+}
+// end modal-center
+.navbar-inverse{
+	border: none;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-transparent{
+	background-color: transparent;
+	border: none;
+	box-shadow: none;
+	color: #fff;
+	transition: all .2s;
+	.navbar-brand{
+		color: inherit;
+		&:hover{
+			color: #eee;
+		}
+	}
+	.navbar-text{
+		color: inherit;
+	}
+	.navbar-nav{
+		> li{
+			&.dropdown.open{
+				> a{
+					background-color: transparent;
+					color: inherit;
+				}
+			}
+			> a{
+				color: inherit;
+				position: relative;
+				&:hover, &:focus{
+					color: inherit;
+					font-weight: bold;
+				}
+			}
+		}
+		> .active{
+			a,a:hover,a:focus{
+				color: inherit;
+				background: none;
+			}
+		}
+	}
+	.navbar-toggle{
+		border-color: #fff;
+		.icon-bar{
+			background-color: #fff;
+		}
+	}
+}
+
+
+// Dropdown
+// ------------------------------------------------
+
+.dropdown-menu{
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+	> li > a{
+		line-height: 25px;
+	}
+}
+
+
+// Btns
+// ------------------------------------------------
+.btn{
+	border-color: transparent !important;
+}
+.btn-link{
+	text-transform: none;
+}
+.btn-default{
+	border-color: #ddd !important;
+}
+.btn-default-bg{
+	&:hover,&:focus{
+		color: #fff !important;
+		background: #111 !important;
+		border-color: #111 !important;
+	}
+}
+
+
+// Forms
+// ------------------------------------------------
+.form-control{
+	// box-shadow: none !important;
+}
+
+
+// Others
+// ------------------------------------------------
+
+// Close 
+.close{
+	font-weight: 300;
+}
+
+.progress{
+	height: 12px;
+	margin-bottom: 10px;
+}
+
+.img-responsive{
+	display: inline-block;
+}
+
+.jumbotron p{
+	font-weight: 300;
+}

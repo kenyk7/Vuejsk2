@@ -4,8 +4,18 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
 
+// jQuery
+import $ from 'jquery'
+window.$ = $
+
 Vue.use(VueRouter)
 Vue.use(VueResource)
+
+// Import scss folder
+import 'src/scss/style.scss'
+
+// Use bootstrap js
+import 'bootstrap-sass/assets/javascripts/bootstrap.js'
 
 // Router
 Vue.router = require('./routes').default

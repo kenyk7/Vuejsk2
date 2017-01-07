@@ -1,19 +1,33 @@
 // ==== STYLES ==== //
 
+// Load bourbon sass helpers
+// @import "bower_components/bourbon/app/assets/stylesheets/_bourbon";
+
 // Configuration variables and settings
-@import "_config";
+@import "_variables";
 
+// Add mixins
+@import "mixin/general";
 
-// Load milligramcore plugin csss minimal
-// @import "bower_components/MilligramCore/src/scss/milligram-core";
+/*!
+Theme Name: #{$theme-name}
+Theme URI: #{$theme-uri}
+Author: #{$theme-author}
+Author URI: #{$theme-author-uri}
+Description: #{$theme-description}
+Version: #{$theme-version}
+Text Domain: #{$theme-text-domain}
+*/
 
+// Load bootstrap-sass
+@import "~bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 
 // load plugins
 
 // end load plugins
 
+
 // Local styles
-@import "mixin/general";
 @import "base/general";
 @import "components/general";
 @import "pages/general";
