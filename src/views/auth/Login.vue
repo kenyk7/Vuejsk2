@@ -1,9 +1,11 @@
 <template>
-  <div class="ws-login">
-    <div class="container">
-      <div class="container-content">
+  <div class="ws-auth">
+    <div class="ws-auth__content">
+      <div class="container">
         <div class="text-center">
-          <img src="static/img/logo.png" alt="Login" width="90">
+          <router-link :to="{name: 'home'}">
+            <img src="static/img/logo.png" alt="Vue" width="90">
+          </router-link>
         </div>
         <div class="login-form">
           <h3 class="text-center">
@@ -24,13 +26,16 @@
                 <input v-model="data.rememberMe" type="checkbox" /> Remember Me
               </label>
             </div>
-
+        
             <div class="clearfix">
-              <button type="submit" class="btn btn-primary btn-lg- float-xs-right">Connexion</button>
+              <button type="submit" class="btn btn-primary pull-right">Login</button>
             </div>
             
           </form>
         </div>
+        <p class="text-center">
+          No tengo una cuenta? <router-link :to="{name: 'register'}">Sign up</router-link>
+        </p>
       </div>
     </div>
   </div>

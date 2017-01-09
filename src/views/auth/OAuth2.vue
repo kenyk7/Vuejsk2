@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container text-center">
     <h1>Oauth2</h1>
 
     <div v-show="!code || !type">

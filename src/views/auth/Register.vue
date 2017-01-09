@@ -1,13 +1,15 @@
 <template>
-  <div class="ws-register">
-    <div class="container">
-      <div class="container-content">
+  <div class="ws-auth">
+    <div class="ws-auth__content">
+      <div class="container">
         <div class="text-center">
-          <img src="static/img/logo.png" alt="Login" width="90">
+          <router-link :to="{name: 'home'}">
+            <img src="static/img/logo.png" alt="Vue" width="90">
+          </router-link>
         </div>
         <div class="login-form">
           <h3 class="text-center">
-            Register
+            Register Form
           </h3>
           <form  v-on:submit.prevent="register()">
             <p v-show="error">
@@ -29,13 +31,16 @@
                 <input v-model="data.rememberMe" type="checkbox" /> Remember Me
               </label>
             </div>
-
+        
             <div class="clearfix">
-              <button type="submit" class="btn btn-primary btn-lg- float-xs-right">Register</button>
+              <button type="submit" class="btn btn-primary pull-right">Register</button>
             </div>
             
           </form>
         </div>
+        <p class="text-center">
+          Ya tengo una cuenta <router-link :to="{name: 'login'}">Sign in</router-link>
+        </p>
       </div>
     </div>
   </div>

@@ -8,17 +8,15 @@ $theme-author:  "Keny Romero";
 $theme-author-uri:  "http://github.com/kenyk7";
 $theme-description: "App dev";
 $theme-version: "1.0";
-$theme-text-domain: "App";
-
 
 // Images path use css
 // ------------------------------------------------
-$img: 'static/img/';
+$imgs: './../assets/img/';
 
 
 // Define colors
 // ------------------------------------------------
-$brand-primary: #303F9F;
+$brand-primary: #41b883;
 $brand-second: #000;
 
 $brand-success: #4caf50;
@@ -38,7 +36,7 @@ $body-bg: #fff;
 $grid-gutter-width: 30px !default;
 
 
-// Default indigo
+// Default vue
 // ------------------------------------------------
 $font-size-base: 15px !default;
 $font-family-sans-serif:  'Lato', sans-serif;

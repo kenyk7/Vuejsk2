@@ -18,7 +18,7 @@ export default {
 $loader-width: 50px;
 $loader-bulk: 2px;
 $loader-bg: rgba(#fff, 0.9);
-$loader-color: blue;
+$loader-color: black;
 
 .loader {
   position: fixed;
@@ -42,7 +42,7 @@ $loader-color: blue;
     border: $loader-bulk solid rgba($loader-color, 0.1);
     border-left: $loader-bulk solid rgba($loader-color, 0.7);
     
-    animation: loading 0.7s infinite linear;
+    animation: loading 0.5s infinite linear;
   }
   &__circle,
   &__circle:after {

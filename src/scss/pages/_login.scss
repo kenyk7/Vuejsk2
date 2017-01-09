@@ -1,8 +1,16 @@
-.ws-login{
-	// background: $brand-primary;
+.ws-auth{
+	height: 100vh;
+	background-image: url($imgs + 'login-bg.jpg');
+	background-size: cover;
+	padding: 20px 0;
+	display: flex;
+	align-items: center;
+	&__content{
+		width: 100%;
+	}
 }
 .login-form{
-	max-width: 50%;
+	max-width: 40%;
 	margin-left: auto;
 	margin-right: auto;
 	padding: 2rem;
@@ -11,8 +19,12 @@
 	border-radius: 0.3rem;
 	margin-top: 15px;
 	margin-bottom: 20px;
+	h3{
+		margin-top: 10px;
+		margin-bottom: 20px;
+	}
 	@include mediaDown(sm){
-		max-width: 95%;
+		max-width: 100%;
 		padding: 2rem;
 	}
 }
