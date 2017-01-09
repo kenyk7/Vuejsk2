@@ -52,7 +52,7 @@ export default {
   },
 
   computed: {
-    verifyPageAuth: () => {
+    verifyPageAuth: function () {
       return this.$route.name === 'login' || this.$route.name === 'register' || this.$route.name === 'oauth'
     }
   }
