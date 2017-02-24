@@ -5,18 +5,21 @@ import env from './../app.env'
 import Vue from 'vue'
 
 import VueRouter from 'vue-router'
-import VueResource from 'vue-resource'
 Vue.use(VueRouter)
-Vue.use(VueResource)
 
-// jQuery
-import $ from 'jquery'
-window.$ = $
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+import VueAuth from '@websanova/vue-auth'
+Vue.use(VueAxios, axios)
 
 // Mixin functions globals
 import mixins from './helpers/mixins.js'
 // Inject mixins functions to vue
 Vue.mixin(mixins)
+
+// jQuery
+import $ from 'jquery'
+window.$ = $
 
 // Use bootstrap js
 import 'bootstrap-sass/assets/javascripts/bootstrap.js'
@@ -25,9 +28,9 @@ import 'bootstrap-sass/assets/javascripts/bootstrap.js'
 Vue.router = require('./routes').default
 
 // Vue Auth
-Vue.use(require('@websanova/vue-auth'), {
+Vue.use(VueAuth, {
   auth: require('@websanova/vue-auth/drivers/auth/bearer.js'),
-  http: require('@websanova/vue-auth/drivers/http/vue-resource.1.x.js'),
+  http: require('@websanova/vue-auth/drivers/http/axios.1.x.js'),
   router: require('@websanova/vue-auth/drivers/router/vue-router.2.x.js'),
   rolesVar: 'role',
   refreshData: {
@@ -42,9 +45,8 @@ Vue.use(require('@websanova/vue-auth'), {
 })
 
 // Http config
-Vue.http.options.root = env.apiUrl
-Vue.http.headers.common['Accept'] = 'application/vnd.interbank_cupones.v1+json'
-Vue.http.options.emulateJSON = true
+axios.defaults.baseURL = env.apiUrl
+axios.defaults.headers.common['Accept'] = 'application/vnd.api_app.v1+json'
 
 // Start
 var component = require('./App.vue')
