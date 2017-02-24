@@ -27,19 +27,19 @@
 // Btn helpers
 // ------------------------------------------------
 .btn-square{
-    border-radius: 0 !important;
+  border-radius: 0 !important;
 }
 .btn-rounded{
-    border-radius: 50px !important;
+  border-radius: 50px !important;
 }
 
 
 // Font sizes text 12 to 18
 // ------------------------------------------------
 @for $i from 0 through 6 {
-    .fz-#{$i + 12} {
-       font-size: $i + 12px !important;
-    }
+  .fz-#{$i + 12} {
+    font-size: $i + 12px !important;
+  }
 }
 
 
@@ -47,9 +47,9 @@
 // ------------------------------------------------
 @mixin margins($sufix, $direction){
 	@for $i from 0 through 8 {
-	    .#{$sufix}-#{$i * 5} {
-	        margin-#{$direction}: $i * 5px !important;
-	    }
+    .#{$sufix}-#{$i * 5} {
+      margin-#{$direction}: $i * 5px !important;
+    }
 	}
 }
 
@@ -104,7 +104,7 @@ table{
 	position: relative;
 }
 .no-resize{
-    resize: none;
+  resize: none;
 }
 
 .disable-scroll{
