@@ -1,4 +1,6 @@
-# Vuejsk2 Boilerplate Frontend
+# Vuejsk2 Boilerplate Frontend: REST Consumer
+
+Vuejsk2 Boilerplate Frontend Based vue-cli with jshint-mode:strict
 
 > A Vue.js project
 
@@ -25,5 +27,20 @@ npm test
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+
+##Features
+* Vue 2
+* Vue Router
+* Vuex
+* Vue Auth
+* Bootstrap
+* Jquery
+* Sass: Bourbon
+* and more
+
+
+
+Demo server on GitHub [Laravel-api-demo](https://github.com/websanova/laravel-api-demo)
 
 ## Release 1.0
