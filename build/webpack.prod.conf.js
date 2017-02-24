@@ -33,7 +33,9 @@ var webpackConfig = merge(baseWebpackConfig, {
     }),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
-        warnings: false
+        warnings: false,
+        // Drop console statements
+        drop_console: true
       }
     }),
     new webpack.optimize.OccurrenceOrderPlugin(),
