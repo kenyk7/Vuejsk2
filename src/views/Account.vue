@@ -24,43 +24,39 @@
         context: 'account context'
       }
     },
-
     methods: {
       fetch () {
         this.$auth.fetch({
           success () {
-            console.log('success ' + this.context)
+            this.log('success ' + this.context)
           },
           error () {
-            console.log('error ' + this.context)
+            this.log('error ' + this.context)
           }
         })
       },
-
       refresh () {
         this.$auth.refresh({
           success () {
-            console.log('success ' + this.context)
+            this.log('success ' + this.context)
           },
           error () {
-            console.log('error ' + this.context)
+            this.log('error ' + this.context)
           }
         })
       },
-
       getUsers (asAdmin) {
         if (asAdmin === true) {
           this.$auth.disableOther()
         }
-
         this.$http({
           url: 'users',
           method: 'GET'
         })
         .then((res) => {
-          console.log('success ' + this.context)
+          this.log('success ' + this.context)
         }, (res) => {
-          console.log('error ' + this.context)
+          this.log('error ' + this.context)
         })
 
         this.$auth.enableOther()

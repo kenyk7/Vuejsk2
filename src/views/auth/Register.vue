@@ -31,11 +31,9 @@
                 <input v-model="data.rememberMe" type="checkbox" /> Remember Me
               </label>
             </div>
-        
             <div class="clearfix">
               <button type="submit" class="btn btn-primary pull-right">Register</button>
             </div>
-            
           </form>
         </div>
         <p class="text-center">
@@ -59,15 +57,12 @@ export default {
         autoLogin: false,
         rememberMe: false
       },
-
       error: null
     }
   },
-
   mounted () {
-    console.log('ready')
+    this.log('ready')
   },
-
   methods: {
     register () {
       this.$auth.register({
@@ -75,10 +70,10 @@ export default {
         autoLogin: this.data.autoLogin,
         rememberMe: this.data.rememberMe,
         success: function () {
-          console.log('success ' + this.context)
+          this.log('success ' + this.context)
         },
         error: function (res) {
-          console.log('error ' + this.context)
+          this.log('error ' + this.context)
           this.error = res.data
         }
       })

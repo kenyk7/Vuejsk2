@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import * as rol from './config/roles'
 
 Vue.use(VueRouter)
 
@@ -58,7 +59,7 @@ var admin = [
     path: '/admin',
     name: 'admin',
     component: require('./views/Admin.vue'),
-    meta: {auth: 'admin'},
+    meta: {auth: rol.ADMIN},
     children: [{
       path: 'products',
       name: 'admin-products',

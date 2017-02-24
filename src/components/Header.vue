@@ -11,7 +11,7 @@
         </button>
         <router-link :to="{name: 'home'}" class="navbar-brand">{ Name App }</router-link>
       </div>
-  
+
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav">
@@ -73,10 +73,10 @@ export default {
       this.$auth.logout({
         makeRequest: true,
         success () {
-          console.log('success ' + this.context)
+          this.log('success ' + this.context)
         },
         error () {
-          console.log('error ' + this.context)
+          this.log('error ' + this.context)
         }
       })
     },
@@ -84,10 +84,10 @@ export default {
     logoutOther () {
       this.$auth.logoutOther({
         success () {
-          console.log('success ' + this.context)
+          this.log('success ' + this.context)
         },
         error () {
-          console.log('error ' + this.context)
+          this.log('error ' + this.context)
         }
       })
     }

@@ -26,11 +26,11 @@
                 <input v-model="data.rememberMe" type="checkbox" /> Remember Me
               </label>
             </div>
-        
+
             <div class="clearfix">
               <button type="submit" class="btn btn-primary pull-right">Login</button>
             </div>
-            
+
           </form>
         </div>
         <p class="text-center">
@@ -56,7 +56,6 @@
         error: null
       }
     },
-
     methods: {
       login () {
         this.$auth.login({
@@ -64,10 +63,10 @@
           rememberMe: this.data.rememberMe,
           redirect: {name: 'account'},
           success () {
-            console.log('success ' + this.context)
+            this.log('success ' + this.context)
           },
           error (res) {
-            console.log('error ' + this.context)
+            this.log('error ' + this.context)
             this.error = res.data
           }
         })

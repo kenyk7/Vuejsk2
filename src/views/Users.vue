@@ -26,11 +26,9 @@ import $ from 'jquery'
 
 export default {
   name: 'users',
-
   components: {
     Loader
   },
-
   data () {
     return {
       context: 'users context',
@@ -38,37 +36,34 @@ export default {
       users: null
     }
   },
-
   mounted () {
     this.getUsers()
     $('.js-title-users').addClass('h2')
   },
-
   methods: {
     getUsers () {
       this.$http({
-        url: 'users',
+        url: this.Endpoint('users', 'get'),
         method: 'GET'
       })
       .then((res) => {
         this.loading = false
         this.users = res.data.data.items
-        console.log('success ' + this.context)
+        this.log('success ' + this.context)
       }, (res) => {
-        console.log('error ' + this.context)
+        this.log('error ' + this.context)
       })
     },
-
     loginOther (user) {
       this.$auth.loginOther({
         params: {
           id: user.id
         },
         success () {
-          console.log('success ' + this.context)
+          this.log('success ' + this.context)
         },
         error () {
-          console.log('error ' + this.context)
+          this.log('error ' + this.context)
         },
         redirect: '/account'
       })

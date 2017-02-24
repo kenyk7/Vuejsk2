@@ -58,3 +58,7 @@ export default {
   }
 }
 </script>
+<style lang="sass">
+// Import scss folder
+@import './scss/style.scss'
+</style>

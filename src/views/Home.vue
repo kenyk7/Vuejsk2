@@ -2,6 +2,14 @@
   <div>
     <div class="page-head">
       <h1>{{ msg }} {{ token }}</h1>
+      <p>
+        <button type="button" class="btn btn-default">button</button>
+        <button type="button" class="btn btn-primary">button</button>
+        <button type="button" class="btn btn-success">button</button>
+        <button type="button" class="btn btn-info">button</button>
+        <button type="button" class="btn btn-danger">button</button>
+        <button type="button" class="btn btn-warning">button</button>
+      </p>
     </div>
     <hr>
     <h3>Test Redirects</h3>
@@ -36,13 +44,11 @@ export default {
       msg: 'Welcome to Home page'
     }
   },
-
   methods: {
     setToken (name) {
       this.token = this.$auth.token(name)
     }
   },
-
   components: { }
 }
 </script>

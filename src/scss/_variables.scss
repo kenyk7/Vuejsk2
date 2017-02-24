@@ -11,7 +11,7 @@ $theme-version: "1.0";
 
 // Images path use css
 // ------------------------------------------------
-$imgs: './../assets/img/';
+$imgs: './assets/img/';
 
 
 // Define colors
@@ -41,7 +41,8 @@ $grid-gutter-width: 30px !default;
 $font-size-base: 15px !default;
 $font-family-sans-serif:  'Lato', sans-serif;
 $headings-font-weight: 500 !default;
-$font-path: 'src/fonts/';
+$icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
+$fonts: './fonts/';
 
 
 // Navbars
@@ -152,5 +153,5 @@ $grid-float-breakpoint: 992px;
 $progress-bg: #555;
 
 
-// Others vars: my vars 
+// Others vars: my vars
 // ------------------------------------------------

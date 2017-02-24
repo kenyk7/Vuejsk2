@@ -1,0 +1,13 @@
+<ifModule mod_rewrite.c>
+   RewriteEngine On
+   RewriteCond %{REQUEST_FILENAME} !\.(js|css|gif|jpg|jpeg|png|svg|ico|swf|pdf|html|php|json|ttf|woff|woff2|otf|eot)$
+   RewriteCond %{REQUEST_URI} !^index
+   RewriteRule (.*) index.html [L]
+</ifModule>
+
+# Security concerns
+<IfModule mod_headers.c>
+    Header set X-Frame-Options DENY
+    Header set X-XSS-Protection "1; mode=block"
+    Header set X-Content-Type-Options nosniff
+</IfModule>
