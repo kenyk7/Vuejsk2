@@ -1,8 +1,7 @@
 // ==== STYLES ==== //
-
+//
 // Load bourbon sass helpers
-// @import "bower_components/bourbon/app/assets/stylesheets/_bourbon";
-
+@import "~bourbon/app/assets/stylesheets/bourbon";
 // Configuration variables and settings
 @import "_variables";
 
@@ -24,7 +23,6 @@ Version: #{$theme-version}
 // load plugins
 
 // end load plugins
-
 
 // Local styles
 @import "base/general";
