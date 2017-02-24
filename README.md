@@ -34,11 +34,11 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 * Vue Router
 * Vuex
 * Vue Auth
+* Vue Axios
 * Bootstrap
 * Jquery
 * Sass: Bourbon
 * and more
-
 
 
 Demo server on GitHub [Laravel-api-demo](https://github.com/websanova/laravel-api-demo)
