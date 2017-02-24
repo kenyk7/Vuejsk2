@@ -42,16 +42,15 @@ export default {
   },
   methods: {
     getUsers () {
-      this.axios({
-        method: 'GET',
-        url: this.Endpoint('users', 'get')
+      this.$http({
+        url: this.Endpoint('users', 'get'),
+        method: 'GET'
       })
       .then((res) => {
         this.loading = false
         this.users = res.data.data.items
         this.log('success ' + this.context)
-      })
-      .catch((res) => {
+      }, (res) => {
         this.log('error ' + this.context)
       })
     },

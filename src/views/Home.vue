@@ -48,7 +48,8 @@ export default {
     setToken (name) {
       this.token = this.$auth.token(name)
     }
-  }
+  },
+  components: { }
 }
 </script>
 
