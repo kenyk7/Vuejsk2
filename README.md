@@ -32,6 +32,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 ##Features
 * Vue 2
 * Vue Router
+* Vue resource
 * Vuex
 * Vue Auth
 * Bootstrap
